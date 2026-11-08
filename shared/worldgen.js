@@ -1,19 +1,4 @@
-/* shared/worldgen.js — v3: villages, crashed plane, forest patches. Units: meters. */
-(function (root, factory) {
-  if (typeof module === 'object' && module.exports) module.exports = factory();
-  else root.WorldGen = factory();
-})(typeof self !== 'undefined' ? self : this, function () {
-  'use strict';
-  var SIZE = 1400, WALL_T = 0.3, DOOR_W = 1.6, PR = 0.5, CR = 0.6;
-  var NIGHT = 300, DAY = 600;
 
-  function mulberry32(seed) {
-    var a = seed >>> 0;
-    return function () {
-      a |= 0; a = (a + 0x6D2B79F5) | 0;
-      var t = Math.imul(a ^ (a >>> 15), 1 | a);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
   }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
